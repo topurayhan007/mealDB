@@ -9,7 +9,57 @@
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body>
+  <body class="text-center">
+    <header class="w-11/12 mx-auto">
+      <nav class="py-4">
+        <ul class="flex items-center justify-between">
+          <li class="text-[#403F3F] font-bold text-2xl">Tasty HUT</li>
+          <li>
+            <button
+              class="bg-[#FFC107] text-black font-bold px-8 py-3 rounded-lg"
+            >
+              Sign Up
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </header>
 
+    <main>
+      <section class="relative">
+        <img class="w-full" src="images/banner_1.png" alt="" />
+        <div
+          class="bg-[#100f0f] opacity-[0.7] w-full h-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+        ></div>
+        <div
+          class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-9/12 text-white"
+        >
+          <h1 class="text-6xl font-bold text-center mb-6">
+            Taste Our Delicious <br />
+            Best Foods
+          </h1>
+          <p>
+            There are many variations of passages of Lorem Ipsum available, but
+            the majority have <br />
+            suffered alteration in some form, by injected humou.
+          </p>
+          <div class="rounded-lg flex items-center justify-center mt-8">
+            <input
+              class="h-max"
+              type="text"
+              name=""
+              id="search-field"
+              placeholder="Search meal"
+            />
+            <button class="bg-yellow-500 text-black rounded-lg px-2 py-1">
+              Search
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- JS file -->
+    <script src="js/script.js"></script>
   </body>
 </html>
