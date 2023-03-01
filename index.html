@@ -8,15 +8,37 @@
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font links -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=EB+Garamond:wght@400;700;800&family=Fira+Code:wght@400;500;600;700&family=Inter&family=Lobster&family=Manrope:wght@400;800&family=Open+Sans&family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500;700&family=Work+Sans:wght@400;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Icon Links -->
+    <script
+      src="https://kit.fontawesome.com/5d04c0d980.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <style>
+      * {
+        font-family: "Poppins", sans-serif;
+      }
+    </style>
   </head>
   <body class="text-center">
-    <header class="w-11/12 mx-auto">
-      <nav class="py-4">
+    <header class="px-4 md:px-0 md:w-5/6 mx-auto">
+      <nav class="py-4 md:py-6">
         <ul class="flex items-center justify-between">
-          <li class="text-[#403F3F] font-bold text-2xl">Tasty HUT</li>
+          <li class="text-[#403F3F] font-bold text-lg md:text-2xl">
+            Tasty HUT
+          </li>
           <li>
             <button
-              class="bg-[#FFC107] text-black font-bold px-8 py-3 rounded-lg"
+              class="bg-[#FFC107] text-black text-sm md:text-xl font-bold px-5 md:px-10 py-2 md:py-4 rounded md:rounded-lg"
             >
               Sign Up
             </button>
@@ -26,39 +48,200 @@
     </header>
 
     <main>
+      <!-- Banner Section -->
+
       <section class="relative">
         <img class="w-full" src="images/banner_1.png" alt="" />
         <div
           class="bg-[#100f0f] opacity-[0.7] w-full h-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
         ></div>
         <div
-          class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-9/12 text-white"
+          class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full md:w-max text-white"
         >
-          <h1 class="text-6xl font-bold text-center mb-6">
+          <h1
+            class="text-2xl md:text-5xl lg:text-6xl font-bold leading-none md:leading-normal text-center mb-2 md:mb-6"
+          >
             Taste Our Delicious <br />
             Best Foods
           </h1>
-          <p>
+          <p class="text-[0.5rem] md:text-base md:leading-relaxed">
             There are many variations of passages of Lorem Ipsum available, but
             the majority have <br />
             suffered alteration in some form, by injected humou.
           </p>
-          <div class="rounded-lg flex items-center justify-center mt-8">
-            <input
-              class="h-max"
-              type="text"
-              name=""
-              id="search-field"
-              placeholder="Search meal"
-            />
-            <button class="bg-yellow-500 text-black rounded-lg px-2 py-1">
-              Search
-            </button>
+          <div class="flex items-center justify-center mt-3 md:mt-8">
+            <div
+              class="relative rounded-lg w-max lg:w-full flex items-center justify-center"
+            >
+              <i
+                class="fa-solid fa-magnifying-glass md:fa-lg absolute left-0 px-4 md:px-6 text-gray-400"
+              ></i>
+              <input
+                class="text-gray-900 text-xs md:text-base block w-full py-2 md:py-4 pl-10 md:px-16 rounded-tl md:rounded-tl-lg rounded-bl md:rounded-bl-lg"
+                type="text"
+                name=""
+                id="search-field"
+                placeholder="Search any food"
+              />
+              <button
+                id="btn-search"
+                class="bg-[#FFC107] text-black text-sm md:text-xl font-bold px-3 md:px-8 py-1.5 md:py-3.5 md:rounded-tr-lg rounded-tr md:rounded-br-lg rounded-br"
+              >
+                Search
+              </button>
+            </div>
           </div>
         </div>
       </section>
+
+      <!-- Food Section -->
+      <section class="w-11/12 md:w-5/6 mx-auto md:mb-32 mb-10">
+        <h3
+          class="text-lg md:text-4xl font-semibold mt-8 md:mt-32 mb-5 md:mb-14"
+        >
+          Your Favourite Food
+        </h3>
+
+        <!-- Food Container -->
+        <div class="grid md:grid-cols-2 gap-6">
+          <!-- Food Cards -->
+
+          <div
+            class="flex md:flex-col lg:flex-row items-center bg-white border border-2 border-gray-200 rounded-xl hover:bg-gray-50"
+          >
+            <img
+              src="images/1.png"
+              class="object-cover w-1/2 md:w-full rounded-t-lg rounded-b-lg lg:h-72"
+              alt=""
+            />
+            <div
+              class="flex flex-col justify-between gap-2 pl-4 md:p-4 leading-normal text-left"
+            >
+              <h4 class="text-md md:text-2xl text-[#403F3F] font-bold">
+                Chicken Handi
+              </h4>
+              <p
+                class="text-[#706F6F] text-sm md:text-lg font-normal md:mt-4 md:mb-6"
+              >
+                There are many variations of passages of available, but the
+                majority have suffered.
+              </p>
+              <h5
+                id="btn-details"
+                class="text-[#FFC107] font-semibold underline md:mb-2 lg:mb-0"
+              >
+                View Details
+              </h5>
+            </div>
+          </div>
+          <div
+            class="flex md:flex-col lg:flex-row items-center bg-white border border-2 border-gray-200 rounded-lg hover:bg-gray-50"
+          >
+            <img
+              src="images/1.png"
+              class="object-cover w-1/2 md:w-full rounded-t-lg rounded-b-lg lg:h-72"
+              alt=""
+            />
+            <div
+              class="flex flex-col justify-between gap-2 pl-4 md:p-4 leading-normal text-left"
+            >
+              <h4 class="text-md md:text-2xl text-[#403F3F] font-bold">
+                Chicken Handi
+              </h4>
+              <p
+                class="text-[#706F6F] text-sm md:text-lg font-normal md:mt-4 md:mb-6"
+              >
+                There are many variations of passages of available, but the
+                majority have suffered.
+              </p>
+              <h5 class="text-[#FFC107] font-semibold underline">
+                View Details
+              </h5>
+            </div>
+          </div>
+        </div>
+
+        <button
+          class="bg-[#FFC107] text-black text-sm md:text-xl font-bold px-5 md:px-10 py-2 md:py-4 rounded md:rounded-lg md:mt-20 mt-8"
+        >
+          Show All
+        </button>
+      </section>
     </main>
 
+    <!-- Footer Section -->
+    <footer class="bg-[#FFFCF3]">
+      <section class="px-4 md:px-0 md:w-5/6 mx-auto py-32">
+        <div class="grid lg:grid-cols-2 text-black gap-5">
+          <div class="grid lg:grid-cols-3 gap-3">
+            <div
+              class="flex flex-col items-start text-left text-xl font-medium text-[#403F3F] gap-5"
+            >
+              <h3 class="text-md md:text-2xl text-[#403F3F] font-bold">
+                Section
+              </h3>
+              <p class="md:mt-3">Home</p>
+              <p>Features</p>
+              <p>Pricing</p>
+              <p>FAQs</p>
+              <p>About</p>
+            </div>
+            <div
+              class="flex flex-col items-start text-left text-xl font-medium text-[#403F3F] gap-5"
+            >
+              <h3 class="text-md md:text-2xl text-[#403F3F] font-bold">
+                Section
+              </h3>
+              <p class="md:mt-3">UI/UX design</p>
+              <p>Product Design</p>
+              <p>Back End Developer</p>
+              <p>Front End Developer</p>
+            </div>
+            <div
+              class="flex flex-col items-start text-left text-xl font-medium text-[#403F3F] gap-5"
+            >
+              <h3 class="text-md md:text-2xl text-[#403F3F] font-bold">
+                Resource
+              </h3>
+              <p class="md:mt-3">FAQ</p>
+              <p>Support</p>
+              <p>Privacy Policy</p>
+              <p>Terms of Service</p>
+            </div>
+          </div>
+
+          <!-- Contact Section -->
+          <div class="flex flex-col items-start text-left">
+            <h3 class="text-md md:text-2xl text-[#403F3F] font-bold">
+              Subscribe to our newsletter
+            </h3>
+            <p
+              class="text-[#706F6F] text-sm md:text-lg font-normal md:mt-6 md:mb-4"
+            >
+              There are many variations of passages of available, <br />
+              but the majority have suffered
+            </p>
+
+            <div
+              class="w-max lg:w-full flex items-center gap-6 justify-between"
+            >
+              <input
+                class="bg-transparent text-gray-900 border border-2 border-gray-200 text-xs md:text-base block w-full py-2 md:py-4 pl-4 md:px-4 rounded md:rounded-lg"
+                type="email"
+                name=""
+                id=""
+                placeholder="Email address"
+              />
+              <button
+                class="bg-[#FFC107] text-black text-sm md:text-xl font-bold px-3 md:px-8 py-1.5 md:py-3.5 rounded md:rounded-lg"
+              >
+                Subscribe
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </footer>
     <!-- JS file -->
     <script src="js/script.js"></script>
   </body>
