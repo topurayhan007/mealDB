@@ -84,6 +84,7 @@
                 placeholder="Search any food"
               />
               <button
+                onclick="searchMeals()"
                 id="btn-search"
                 class="bg-[#FFC107] text-black text-sm md:text-xl font-bold px-3 md:px-8 py-1.5 md:py-3.5 md:rounded-tr-lg rounded-tr md:rounded-br-lg rounded-br"
               >
@@ -103,10 +104,10 @@
         </h3>
 
         <!-- Food Container -->
-        <div class="grid md:grid-cols-2 gap-6">
+        <div id="meals-container" class="grid md:grid-cols-2 gap-6">
           <!-- Food Cards -->
 
-          <div
+          <!-- <div
             class="flex md:flex-col lg:flex-row items-center bg-white border border-2 border-gray-200 rounded-xl hover:bg-gray-50"
           >
             <img
@@ -133,32 +134,7 @@
                 View Details
               </h5>
             </div>
-          </div>
-          <div
-            class="flex md:flex-col lg:flex-row items-center bg-white border border-2 border-gray-200 rounded-lg hover:bg-gray-50"
-          >
-            <img
-              src="images/1.png"
-              class="object-cover w-1/2 md:w-full rounded-t-lg rounded-b-lg lg:h-72"
-              alt=""
-            />
-            <div
-              class="flex flex-col justify-between gap-2 pl-4 md:p-4 leading-normal text-left"
-            >
-              <h4 class="text-md md:text-2xl text-[#403F3F] font-bold">
-                Chicken Handi
-              </h4>
-              <p
-                class="text-[#706F6F] text-sm md:text-lg font-normal md:mt-4 md:mb-6"
-              >
-                There are many variations of passages of available, but the
-                majority have suffered.
-              </p>
-              <h5 class="text-[#FFC107] font-semibold underline">
-                View Details
-              </h5>
-            </div>
-          </div>
+          </div> -->
         </div>
 
         <button
