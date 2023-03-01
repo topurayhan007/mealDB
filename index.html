@@ -29,7 +29,7 @@
       }
     </style>
   </head>
-  <body class="text-center">
+  <body class="text-center" onload="loadMeals('', 6);">
     <header class="px-4 md:px-0 md:w-5/6 mx-auto">
       <nav class="py-4 md:py-6">
         <ul class="flex items-center justify-between">
@@ -143,6 +143,19 @@
         >
           Show All
         </button>
+
+        <!-- Warning Div -->
+        <div
+          id="warning-label"
+          class="hidden md:w-1/2 mx-auto bg-yellow-50 rounded-lg border border-2 border-yellow-500 flex items-center justify-center py-2 md:py-5"
+        >
+          <i
+            class="fa-solid fa-triangle-exclamation text-yellow-500 md:fa-5x fa-xl px-4"
+          ></i>
+          <p class="text-md md:texl-2xl text-orange-300 font-bold">
+            No food found!
+          </p>
+        </div>
       </section>
     </main>
 

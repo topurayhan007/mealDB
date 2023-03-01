@@ -6,8 +6,6 @@ const loadMeals = async (searchText, index) => {
     const data = await res.json();
     displayMeals(data.meals, index);
   } catch (error) {
-    alert("No food found");
-
     console.log(error);
   }
 };
@@ -15,12 +13,21 @@ const loadMeals = async (searchText, index) => {
 const displayMeals = (meals, index) => {
   const mealsContainer = document.getElementById("meals-container");
   const showAllButton = document.getElementById("btn-show-all");
+  const warningLabel = document.getElementById("warning-label");
+
   mealsContainer.innerHTML = "";
-  if (index < meals.length) {
+  // console.log(index, meals.length);
+  if (meals && index < meals.length) {
     meals = meals.slice(0, index);
     showAllButton.classList.remove("hidden");
   } else {
     showAllButton.classList.add("hidden");
+  }
+
+  if (!meals) {
+    warningLabel.classList.remove("hidden");
+  } else {
+    warningLabel.classList.add("hidden");
   }
 
   meals.forEach((meal) => {
@@ -66,6 +73,14 @@ const returnSearchText = () => {
   return searchText;
 };
 
+document
+  .getElementById("search-field")
+  .addEventListener("keypress", function (e) {
+    if (e.key == "Enter") {
+      loadMeals(returnSearchText(), 6);
+    }
+  });
+
 const searchMeals = () => {
   const searchText = returnSearchText();
   loadMeals(searchText, 6);
@@ -74,5 +89,3 @@ const searchMeals = () => {
 document.getElementById("btn-show-all").addEventListener("click", function () {
   loadMeals(returnSearchText());
 });
-
-loadMeals("", 6);
