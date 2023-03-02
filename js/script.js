@@ -39,11 +39,11 @@ const displayMeals = (meals, index) => {
           >
             <img
               src="${meal.strMealThumb}"
-              class="object-cover w-1/2 md:w-full rounded-tl-lg rounded-bl-lg md:rounded-tr-lg md:rounded-bl-none lg:rounded-tl-lg lg:rounded-bl-lg lg:rounded-tr-none h-56 lg:h-72"
+              class="object-cover w-1/2 md:w-full rounded-tl-lg rounded-bl-lg md:rounded-tr-lg md:rounded-bl-none lg:rounded-tl-lg lg:rounded-bl-lg lg:rounded-tr-none h-60 lg:h-72"
               alt=""
             />
             <div
-              class="flex flex-col justify-between gap-2 pl-4 md:p-4 leading-normal text-left"
+              class="flex flex-col justify-between gap-2 p-4 md:p-4 leading-normal text-left"
             >
               <h4 class="text-md md:text-2xl text-[#403F3F] font-bold">
               ${meal.strMeal}
