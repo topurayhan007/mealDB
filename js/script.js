@@ -55,8 +55,8 @@ const displayMeals = (meals, index) => {
                 majority have suffered.
               </p>
               <h5
-                onclick="loadMealDetail2(${meal.idMeal})"
-                class="text-[#FFC107] font-semibold underline md:mb-2 lg:mb-0"
+                onclick="loadMealDetails(${meal.idMeal})"
+                class="text-[#FFC107] font-semibold cursor-pointer underline underline-offset-4 md:mb-2 lg:mb-0"
               >
                 View Details
               </h5>
@@ -89,3 +89,46 @@ const searchMeals = () => {
 document.getElementById("btn-show-all").addEventListener("click", function () {
   loadMeals(returnSearchText());
 });
+
+// Modal script
+const openModal = () => {
+  // Show modal backdrop and dialog
+  document.getElementById("modalBackdrop").classList.remove("hidden");
+  document.getElementById("modalDialog").classList.remove("hidden");
+  // Disable body scrolling
+  document.body.style.overflow = "hidden";
+};
+
+const closeModal = () => {
+  // Hide modal backdrop and dialog
+  document.getElementById("modalBackdrop").classList.add("hidden");
+  document.getElementById("modalDialog").classList.add("hidden");
+  // Enable body scrolling
+  document.body.style.overflow = "auto";
+};
+
+const loadMealDetails = (id) => {
+  // console.log(id);
+  openModal();
+  const url = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`;
+  fetch(url)
+    .then((res) => res.json())
+    .then((data) => displayMealDetails(data.meals[0]));
+};
+
+const displayMealDetails = (details) => {
+  const modalTitle = document.getElementById("modal-title");
+  const modalImg = document.getElementById("modal-img");
+  const modalCategory = document.getElementById("modal-category");
+  const modalArea = document.getElementById("modal-area");
+  const modalInstr = document.getElementById("modal-instruction");
+  const modalYoutube = document.getElementById("modal-youtube");
+
+  modalTitle.innerText = details.strMeal;
+  modalImg.setAttribute("src", details.strMealThumb);
+  modalCategory.innerText = details.strCategory;
+  modalArea.innerText = details.strArea;
+  modalInstr.innerText = details.strInstructions;
+  modalYoutube.href = details.strYoutube;
+  modalYoutube.innerText = details.strYoutube;
+};
